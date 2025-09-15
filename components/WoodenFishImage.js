@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -10,11 +10,7 @@ export default function WoodenFishImage({ onTap }) {
       onPress={onTap}
       activeOpacity={0.8}
     >
-      <Image 
-        source={require('../assets/wooden_fish.png')}
-        style={styles.image}
-        resizeMode="contain"
-      />
+      <Text style={styles.fishEmoji}>🥥</Text>
     </TouchableOpacity>
   );
 }
@@ -23,9 +19,18 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  image: {
+    backgroundColor: '#8B4513',
+    borderRadius: width * 0.3,
     width: width * 0.6,
     height: width * 0.6,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  fishEmoji: {
+    fontSize: width * 0.25,
+    textAlign: 'center',
   },
 });
