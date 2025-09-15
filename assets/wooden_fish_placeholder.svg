@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 木鱼主体 -->
+  <ellipse cx="256" cy="280" rx="180" ry="120" fill="#8B4513" stroke="#654321" stroke-width="4"/>
+  
+  <!-- 木鱼顶部开口 -->
+  <ellipse cx="256" cy="200" rx="140" ry="80" fill="#A0522D"/>
+  <ellipse cx="256" cy="200" rx="130" ry="70" fill="#2F1B14"/>
+  
+  <!-- 木鱼纹理线条 -->
+  <path d="M 100 280 Q 256 320 412 280" stroke="#654321" stroke-width="2" fill="none"/>
+  <path d="M 120 300 Q 256 340 392 300" stroke="#654321" stroke-width="2" fill="none"/>
+  
+  <!-- 底部阴影 -->
+  <ellipse cx="256" cy="420" rx="160" ry="40" fill="#000000" opacity="0.2"/>
+  
+  <!-- 装饰花纹 -->
+  <circle cx="180" cy="260" r="15" fill="#654321"/>
+  <circle cx="332" cy="260" r="15" fill="#654321"/>
+</svg>
