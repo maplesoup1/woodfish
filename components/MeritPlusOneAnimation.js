@@ -1,24 +1,37 @@
 import React, { useEffect, useRef } from 'react';
 import { StyleSheet, Text, Animated } from 'react-native';
 
+const ANIMATION_DURATION = 800;
+const TRANSLATE_DISTANCE = -50;
+
 export default function MeritPlusOneAnimation() {
   const translateY = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(1)).current;
+  const animationRef = useRef(null);
 
   useEffect(() => {
-    Animated.parallel([
+    animationRef.current = Animated.parallel([
       Animated.timing(translateY, {
-        toValue: -50,
-        duration: 800,
+        toValue: TRANSLATE_DISTANCE,
+        duration: ANIMATION_DURATION,
         useNativeDriver: true,
       }),
       Animated.timing(opacity, {
         toValue: 0,
-        duration: 800,
+        duration: ANIMATION_DURATION,
         useNativeDriver: true,
       }),
-    ]).start();
-  }, []);
+    ]);
+
+    animationRef.current.start();
+
+    // 清理动画
+    return () => {
+      if (animationRef.current) {
+        animationRef.current.stop();
+      }
+    };
+  }, [translateY, opacity]);
 
   return (
     <Animated.View
